@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{'Hello' + ' ' + name}}</h1>
+        <h2>{{message}}</h2>
+        <h4>Your Age: {{age}} Years Old</h4>
+        <h4>{{'Your First Skills is:' + ' ' +skills[0]}}</h4>
+        <h4>You Are {{isSubscribed ? 'Subscribed' : 'Not Subscribed'}}!</h4>
+        <p>Your First Test Name is: {{completedTests[0].TestName}}</p>
+        <p>Your First Test Name is: {{completedTests[0].testResult}}</p>
+    </div>
+
+<script type="module">
+  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+  createApp({
+    data() {
+      return {
+        message: 'Hello From Vue!',
+        name: 'Adnan',
+        age: '25',
+        skills:['HTML', 'CSS', 'JavaScript'],
+        isSubscribed: false,
+        completedTests:[
+        {
+            TestName: 'First Test',
+            testResult: '80%'
+        },
+        {
+            TestName: 'Second Test',
+            testResult: '70%'
+        },
+        {
+            TestName: 'Third Test',
+            testResult: '90%'
+        },
+        ]
+    }
+    }
+    
+  }).mount('#app')
+</script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
